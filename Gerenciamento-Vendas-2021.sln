@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0-Project_docs", "0-Project_docs", "{FF351D88-0A17-4DF3-9B44-9D434521AB65}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1-Fronted", "1-Fronted", "{97A60C4A-16B7-4F2E-AB9B-21588CAE23A7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2-Backend", "2-Backend", "{E7778590-BD0B-4273-8ED2-8540A23267C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.1-Presentations", "1.1-Presentations", "{769C04F1-BA91-47E5-A439-29F3C88547BD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.1-Applications", "2.1-Applications", "{72230AA8-9B44-44FD-8E2E-98BDBEFEDE1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.2-Domains", "2.2-Domains", "{AAA85E9F-47EE-4C5F-AE6F-7B9CE9676BF4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.3-Insfrastructures", "2.3-Insfrastructures", "{76F31AE2-FB61-482C-80E8-242EBAB90BDA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.4-Entities", "2.4-Entities", "{C87F8B9E-F025-4800-8256-D1724C22C777}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{769C04F1-BA91-47E5-A439-29F3C88547BD} = {97A60C4A-16B7-4F2E-AB9B-21588CAE23A7}
+		{72230AA8-9B44-44FD-8E2E-98BDBEFEDE1A} = {E7778590-BD0B-4273-8ED2-8540A23267C5}
+		{AAA85E9F-47EE-4C5F-AE6F-7B9CE9676BF4} = {E7778590-BD0B-4273-8ED2-8540A23267C5}
+		{76F31AE2-FB61-482C-80E8-242EBAB90BDA} = {E7778590-BD0B-4273-8ED2-8540A23267C5}
+		{C87F8B9E-F025-4800-8256-D1724C22C777} = {E7778590-BD0B-4273-8ED2-8540A23267C5}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7A94698-B514-4A8D-A1C5-BD4588356F69}
+	EndGlobalSection
+EndGlobal
