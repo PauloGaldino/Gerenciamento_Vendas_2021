@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Configurations.Contexts
 {
-    public  class BaseDbContext : IdentityDbContext<ApplicationUser>
+    public class BaseDbContext : IdentityDbContext<ApplicationUser>
     {
 
         public BaseDbContext(DbContextOptions<BaseDbContext> options) : base(options) { }
@@ -14,9 +14,9 @@ namespace Infrastructure.Configurations.Contexts
         public DbSet<ApplicationUser> ApplicationUser { get; set; }
 
         //configuração das tabelas de gerenciamento de usuários
-        public DbSet<UserType> UserTypes  { get; set; }
-        public DbSet<UserProfile> userProfiles  { get; set; }
-        public DbSet<AccessTypeUser> AccessTypeUsers  { get; set; }
+        public DbSet<UserType> UserTypes { get; set; }
+        public DbSet<UserProfile> userProfiles { get; set; }
+        public DbSet<AccessTypeUser> AccessTypeUsers { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
