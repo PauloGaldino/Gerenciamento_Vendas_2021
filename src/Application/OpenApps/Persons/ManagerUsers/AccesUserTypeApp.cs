@@ -1,4 +1,4 @@
-﻿using Application.Interfaces.Persons.ManagerUsers;
+﻿using Application.Interfaces.Persons.UserManager;
 using Domain.Interfaces.Persons.UserManager;
 using Entity.Persons.Identity.Users.UsersManager;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ namespace Application.OpenApps.Persons.ManagerUsers
 {
     public class AccesUserTypeApp : IAccessTypeUserApp
     {
-        private readonly IAccessUserType _accessUserType;
+        IAccessUserType _accessUserType;
         public AccesUserTypeApp(IAccessUserType accessUserType)
         {
             _accessUserType = accessUserType;
@@ -16,7 +16,7 @@ namespace Application.OpenApps.Persons.ManagerUsers
 
         public async Task Add(AccessTypeUser accessType)
         {
-            await _accessUserType.Add();
+            await _accessUserType.Add(accessType);
         }
 
         public async Task Delete(AccessTypeUser accessType)

@@ -1,4 +1,4 @@
-﻿using Application.Interfaces.Persons.ManagerUsers;
+﻿using Application.Interfaces.Persons.UserManager;
 using Domain.Interfaces.Persons.UserManager;
 using Entity.Persons.Identity.Users.UsersManager;
 using System.Collections.Generic;
@@ -15,7 +15,7 @@ namespace Application.OpenApps.Persons.ManagerUsers
         }
         public async Task Add(UserProfile userProfile)
         {
-            await _userProfile.Add(userProfile)
+            await _userProfile.Add(userProfile);
         }
 
         public async Task Delete(UserProfile userProfile)

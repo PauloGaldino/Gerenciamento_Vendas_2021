@@ -1,7 +1,13 @@
-using Gerenciamento_Vendas.UI.Web.Data;
+using Application.Interfaces.Persons.UserManager;
+using Application.OpenApps.Persons.ManagerUsers;
+using Domain.Interfaces.Generics;
+using Domain.Interfaces.Persons.UserManager;
+using Entity.Persons.Identity.Users;
+using Infrastructure.Configurations.Contexts;
+using Infrastructure.Repositories.Generics;
+using Infrastructure.Repositories.Persons.UserManager;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -21,14 +27,29 @@ namespace Gerenciamento_Vendas.UI.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<BaseDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddEntityFrameworkStores<BaseDbContext>();
             services.AddControllersWithViews();
+
+
+            //INTERFACES E REPOSITÓRIOS
+            services.AddSingleton(typeof(IGeneric<>), typeof(GenericRepository<>));
+            services.AddSingleton<IUserType, UserTypeRepository>();
+            services.AddSingleton<IUserProfile, UserProfileRepository>();
+            services.AddSingleton<IAccessUserType, AccessUserTypeRepository>();
+
+            // INTERFACE APLICAÇÃO
+            services.AddSingleton<IUserTypeApp, UserTypeApp>();
+
+            // SERVIÇO DOMINIO
+            //services.AddSingleton<IService, ServiceCd>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

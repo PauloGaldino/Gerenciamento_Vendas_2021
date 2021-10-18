@@ -15,7 +15,7 @@ namespace Entity.Persons.Identity.Users.UsersManager
         public virtual UserType UserType { get; set; }
 
         [DisplayName("Usuário")]
-        [ForeignKey("Identity")]
+        [ForeignKey("ApplicationUser")]
         [Column(Order = 1)]
         public string UserId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }

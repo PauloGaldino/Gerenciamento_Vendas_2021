@@ -26,7 +26,9 @@ namespace Gerenciamento_Usuario.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            var applicationDbContext = _context.UserProfiles.Include(u => u.IdentityUser).Include(u => u.UserType);
+            var applicationDbContext = _context.UserProfiles
+                .Include(u => u.IdentityUser)
+                .Include(u => u.UserType);
             return View(await applicationDbContext.ToListAsync());
         }
 

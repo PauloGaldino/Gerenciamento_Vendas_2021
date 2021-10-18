@@ -1,4 +1,4 @@
-﻿using Application.Interfaces.Persons.ManagerUsers;
+﻿using Application.Interfaces.Persons.UserManager;
 using Domain.Interfaces.Persons.UserManager;
 using Entity.Persons.Identity.Users.UsersManager;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.OpenApps.Persons.ManagerUsers
 {
-    public class UserTypeApp : IUseTypeApp
+    public class UserTypeApp : IUserTypeApp
     {
         private readonly IUserType _user;
         public UserTypeApp(IUserType user)

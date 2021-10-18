@@ -25,7 +25,7 @@ namespace Gerenciamento_Usuario.Controllers
             {
                 return RedirectToAction("Index", "Home");
             }
-            var authorizeAccess = await UserAuthorizedAccess(3, _context);
+
             return View(await _context.UserTypes.ToListAsync());
         }
 

@@ -1,8 +1,10 @@
 ﻿using Domain.Interfaces.Generics;
 using Infrastructure.Configurations.Contexts;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Win32.SafeHandles;
 using System;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Repositories.Generics
@@ -45,7 +47,7 @@ namespace Infrastructure.Repositories.Generics
         //===============Métodos para pesquisa======================
         public async Task<T> getEntityById(int Id)
         {
-            using (var data = new BaseDbContext(_optionsBulder))
+            using (var data = new BaseDbContext(_optionsBuilder))
             {
                 return await data.Set<T>().FindAsync(Id);
             }
@@ -53,7 +55,7 @@ namespace Infrastructure.Repositories.Generics
 
         public async Task<List<T>> List()
         {
-            using (var data = new BaseDbContext(_optionsBulder))
+            using (var data = new BaseDbContext(_optionsBuilder))
             {
                 return await data.Set<T>().AsNoTracking().ToListAsync();
             }
@@ -97,5 +99,4 @@ namespace Infrastructure.Repositories.Generics
     }
 }
 
-    }
-}
+
