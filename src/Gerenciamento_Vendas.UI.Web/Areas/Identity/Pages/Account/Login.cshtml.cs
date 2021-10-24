@@ -41,14 +41,16 @@ namespace Gerenciamento_Vendas.UI.Web.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
+            [Display(Name = "Nome de usuário ou email*")]
             [EmailAddress]
             public string Email { get; set; }
 
             [Required]
+            [Display(Name = "Senha*")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
-            [Display(Name = "Remember me?")]
+            [Display(Name = "Lembre-me?")]
             public bool RememberMe { get; set; }
         }
 

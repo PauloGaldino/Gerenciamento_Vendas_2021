@@ -1,0 +1,13 @@
+.intro-account {
+  background: #131518;
+  padding: 1.875rem 0;
+  text-align: center;
+  color: #ffffff;
+}
+.intro-account h1 {
+  font-size: 2.25rem;
+  font-family: "Rubik", sans-serif;
+  font-weight: normal;
+  line-height: 1.2;
+  font-weight: normal;
+}

@@ -1,0 +1,54 @@
+[data-menu="buttom"] {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .js [data-menu="buttom"] {
+    position: relative;
+    display: flex;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    background: #222;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    margin: 10px;
+    cursor: pointer;
+    align-items: center;
+    z-index: 300;
+  }
+
+  .js [data-menu="buttom"]::before {
+    content: "";
+    display: inline-block;
+    height: 2px;
+    width: 12px;
+    background: #fff;
+    box-shadow: 0 4px #fff, 0 -4px #fff;
+    margin-right: 4px;
+    transition: transform 5s;
+  }
+  .js [data-menu="buttom"].active::before {
+    transform: rotate(270deg);
+  }
+  .js [data-menu="list"] {
+    position: absolute;
+    display: none;
+    background: #fb5;
+    width: 160px;
+    top: 0;
+    padding: 60px 0 20px 0;
+    box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.2);
+    z-index: 200;
+  }
+  .js [data-menu="list"].active {
+    display: block;
+    animation: show-right 0.3s forwards;
+  }
+  .js .dropdown-menu {
+    position: static;
+    border: none;
+  }
+}
